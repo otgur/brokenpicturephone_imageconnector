@@ -23,7 +23,7 @@ img = Image.new('RGB', size, color = 'white')
 for x in range(count):
     t = Image.open(files[x+1])
     tcopy = t.copy()
-    img.paste(tcopy, (0, height - 450*(x+1)))
+    img.paste(tcopy, (0, height - (height-offset)*(x+1)))
 
 #save image as out.png
 img.save("out.png")
