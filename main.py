@@ -12,10 +12,10 @@ offset = 200
 height = 650
 width = 600
 
-height = (height-offset)*count
+newHeight = (height-offset)*count
 
 #size of connected image
-size = width,height
+size = width,newHeight
 
 img = Image.new('RGB', size, color = 'white')
 
@@ -23,7 +23,7 @@ img = Image.new('RGB', size, color = 'white')
 for x in range(count):
     t = Image.open(files[x+1])
     tcopy = t.copy()
-    img.paste(tcopy, (0, height - (height-offset)*(x+1)))
+    img.paste(tcopy, (0, newHeight - (height-offset)*(x+1)))
 
 #save image as out.png
 img.save("out.png")
